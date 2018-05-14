@@ -10,7 +10,9 @@
 #  image_url   :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  director_id :integer
 #
 
 class Movie < ApplicationRecord
+  belongs_to :director
 end

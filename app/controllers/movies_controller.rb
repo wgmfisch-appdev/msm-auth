@@ -23,9 +23,10 @@ class MoviesController < ApplicationController
     @movie.duration = params.fetch("duration")
     @movie.description = params.fetch("description")
     @movie.image_url = params.fetch("image_url")
+    @movie.director_id = params.fetch("director_id")
     @movie.save
 
-    redirect_to("/movies", :notice => "Movie created successfully.")
+    redirect_to("/directors/#{@movie.director_id}", :notice => "Movie created successfully.")
   end
 
   def edit_form
@@ -42,6 +43,7 @@ class MoviesController < ApplicationController
     @movie.duration = params.fetch("duration")
     @movie.description = params.fetch("description")
     @movie.image_url = params.fetch("image_url")
+    @movie.director_id = params.fetch("director_id")
     @movie.save
 
     redirect_to("/movies/#{@movie.id}", :notice => "Movie updated successfully.")
