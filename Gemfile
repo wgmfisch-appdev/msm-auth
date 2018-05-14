@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
   gem "console_ip_whitelist", github: "firstdraft/console_ip_whitelist"
+  gem 'better_errors'
   gem "draft_log", github: "firstdraft/draft_log"
 end
 
