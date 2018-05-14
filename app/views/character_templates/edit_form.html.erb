@@ -1,19 +1,10 @@
-<!-- Validation failure messages -->
-<% if @character.errors.any? %>
-  <% @character.errors.full_messages.each do |message| %>
-    <div class="alert">
-      <%= message %>
-    </div>
-  <% end %>
-<% end %>
-
 <h1>
   Edit character #<%= @character.id %>
 </h1>
 
 <hr>
 
-<form action="/update_character/<%= @character.id %>" method="post">
+<form action="/update_character/<%= @character.id %>">
   <!-- Label and input for name -->
   <div class="form-group">
     <label for="name">
@@ -29,7 +20,8 @@
       Movie
     </label>
 
-    <input type="text" id="movie_id" name="movie_id" class="form-control" value="<%= @character.movie_id %>">
+    <%= select_tag("movie_id", options_from_collection_for_select(Movie.all, :id, :title, @character.movie_id), :class => "form-control") %>
+    or <a href="/movies/new">add a new movie</a> first
   </div>
 
   <!-- Label and input for actor_id -->
@@ -38,7 +30,8 @@
       Actor
     </label>
 
-    <input type="text" id="actor_id" name="actor_id" class="form-control" value="<%= @character.actor_id %>">
+    <%= select_tag("actor_id", options_from_collection_for_select(Actor.all, :id, :name, @character.actor_id), :class => "form-control") %>
+    or <a href="/actors/new">add a new actor</a> first
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

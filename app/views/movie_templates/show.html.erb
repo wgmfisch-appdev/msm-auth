@@ -44,6 +44,13 @@
     <img src="<%= @movie.image_url %>" width="320">
   </dd>
 
+  <dt>
+    Director
+  </dt>
+  <dd>
+    <%= @movie.director.name %>
+  </dd>
+
 </dl>
 
 <a href="/delete_movie/<%= @movie.id %>" class="btn btn-danger">
@@ -55,3 +62,52 @@
 <a href="/movies">
   Go back
 </a>
+
+
+<div class="card mt-3 mb-5">
+  <div class="card-header">
+    Cast
+  </div>
+  <ul class="list-group">
+    <% @movie.characters.each do |character| %>
+      <li class="list-group-item">
+        <a href="/actors/<%= character.actor_id %>"><%= character.actor.name %></a>
+        (<%= character.name %>)
+      </li>
+    <% end %>
+  </ul>
+  <div class="card-header">
+    Add a new character for this movie
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <form action="/create_character" >
+        <!-- Label and input for title -->
+        <div class="form-group">
+          <label for="name">
+            Name
+          </label>
+
+          <input type="text" id="name" name="name" class="form-control">
+        </div>
+
+        <!-- Label and input for actor_id -->
+        <div class="form-group">
+          <label for="actor_id">
+            Actor
+          </label>
+
+          <%= select_tag("actor_id", options_from_collection_for_select(Actor.all, :id, :name), :class => "form-control") %>
+          or <a href="/actors/new">add a new actor</a> first
+        </div>
+
+        <!-- Label and input for actor_id -->
+        <input type="hidden" name="movie_id" value="<%= @movie.id %>">
+
+        <button class="btn btn-block btn-outline-secondary">
+          Create character
+        </button>
+      </form>
+    </li>
+  </ul>
+</div>

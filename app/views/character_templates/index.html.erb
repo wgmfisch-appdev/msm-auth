@@ -27,14 +27,6 @@
     </th>
 
     <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
-    </th>
-
-    <th>
     </th>
   </tr>
 
@@ -49,23 +41,15 @@
     </td>
 
     <td>
-      <%= character.movie_id %>
+      <%= link_to character.movie.title, "/movies/#{character.movie_id}" %>
     </td>
 
     <td>
-      <%= character.actor_id %>
+      <%= link_to character.actor.name, "/actors/#{character.actor_id}" %>
     </td>
 
     <td>
-      <%= time_ago_in_words(character.created_at) %> ago
-    </td>
-
-    <td>
-      <%= time_ago_in_words(character.updated_at) %> ago
-    </td>
-
-    <td>
-      <a href="/characters/<%= character.id %>">
+      <a href="/characters/<%= character.id %>" class="btn btn-primary">
         Show details
       </a>
     </td>

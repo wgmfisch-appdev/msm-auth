@@ -22,13 +22,9 @@ class CharactersController < ApplicationController
     @character.movie_id = params.fetch("movie_id")
     @character.actor_id = params.fetch("actor_id")
 
-    if @character.valid?
-      @character.save
+    @character.save
 
-      redirect_to("/characters", :notice => "Character created successfully.")
-    else
-      render("character_templates/new_form.html.erb")
-    end
+    redirect_to("/actors/#{@character.actor_id}", :notice => "Character created successfully.")
   end
 
   def edit_form
@@ -44,13 +40,9 @@ class CharactersController < ApplicationController
     @character.movie_id = params.fetch("movie_id")
     @character.actor_id = params.fetch("actor_id")
 
-    if @character.valid?
-      @character.save
+    @character.save
 
-      redirect_to("/characters/#{@character.id}", :notice => "Character updated successfully.")
-    else
-      render("character_templates/edit_form.html.erb")
-    end
+    redirect_to("/characters/#{@character.id}", :notice => "Character updated successfully.")
   end
 
   def destroy_row

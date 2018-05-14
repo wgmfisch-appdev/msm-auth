@@ -20,14 +20,14 @@
     Movie
   </dt>
   <dd>
-    <%= @character.movie_id %>
+    <%= link_to @character.movie.title, "/movies/#{@character.movie_id}" %>
   </dd>
 
   <dt>
     Actor
   </dt>
   <dd>
-    <%= @character.actor_id %>
+    <%= link_to @character.actor.name, "/actors/#{@character.actor_id}" %>
   </dd>
 
   <dt>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # CREATE
   get("/characters/new", { :controller => "characters", :action => "new_form" })
-  post("/create_character", { :controller => "characters", :action => "create_row" })
+  get("/create_character", { :controller => "characters", :action => "create_row" })
 
   # READ
   get("/characters", { :controller => "characters", :action => "index" })
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # UPDATE
   get("/characters/:prefill_with_id/edit", { :controller => "characters", :action => "edit_form" })
-  post("/update_character/:id_to_modify", { :controller => "characters", :action => "update_row" })
+  get("/update_character/:id_to_modify", { :controller => "characters", :action => "update_row" })
 
   # DELETE
   get("/delete_character/:id_to_remove", { :controller => "characters", :action => "destroy_row" })
