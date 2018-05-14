@@ -16,6 +16,8 @@ class MoviesController < ApplicationController
   end
 
   def create_row
+    @movie = Movie.new
+
     @movie.title = params.fetch("title")
     @movie.year = params.fetch("year")
     @movie.duration = params.fetch("duration")
@@ -33,19 +35,22 @@ class MoviesController < ApplicationController
   end
 
   def update_row
+    @movie = Movie.find(params.fetch("id_to_modify"))
+
     @movie.title = params.fetch("title")
     @movie.year = params.fetch("year")
     @movie.duration = params.fetch("duration")
     @movie.description = params.fetch("description")
     @movie.image_url = params.fetch("image_url")
+    @movie.save
 
     redirect_to("/movies/#{@movie.id}", :notice => "Movie updated successfully.")
   end
 
   def destroy_row
-    movie = Movie.find(params.fetch("id_to_remove"))
+    @movie = Movie.find(params.fetch("id_to_remove"))
 
-    movie.destroy
+    @movie.destroy
 
     redirect_to("/movies", :notice => "Movie deleted successfully.")
   end
