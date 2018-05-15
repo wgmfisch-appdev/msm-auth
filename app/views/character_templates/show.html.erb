@@ -29,20 +29,6 @@
   <dd>
     <%= link_to @character.actor.name, "/actors/#{@character.actor_id}" %>
   </dd>
-
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@character.created_at) %> ago
-  </dd>
-
-  <dt>
-    Updated at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@character.updated_at) %> ago
-  </dd>
 </dl>
 
 <a href="/delete_character/<%= @character.id %>">
