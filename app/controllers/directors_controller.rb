@@ -22,9 +22,14 @@ class DirectorsController < ApplicationController
     @director.name = params.fetch("name")
     @director.bio = params.fetch("bio")
     @director.image_url = params.fetch("image_url")
-    @director.save
 
-    redirect_to("/directors", :notice => "Director created successfully.")
+    if @director.valid?
+      @director.save
+
+      redirect_to("/directors", :notice => "Director created successfully.")
+    else
+      render("director_templates/new_form.html.erb")
+    end
   end
 
   def edit_form
@@ -40,9 +45,14 @@ class DirectorsController < ApplicationController
     @director.name = params.fetch("name")
     @director.bio = params.fetch("bio")
     @director.image_url = params.fetch("image_url")
-    @director.save
 
-    redirect_to("/directors/#{@director.id}", :notice => "Director updated successfully.")
+    if @director.valid?
+      @director.save
+
+      redirect_to("/directors/#{@director.id}", :notice => "Director updated successfully.")
+    else
+      render("director_templates/edit_form.html.erb")
+    end 
   end
 
   def destroy_row
