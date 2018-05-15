@@ -1,3 +1,14 @@
+<!-- Validation failure messages -->
+<% if @director.present? %>
+  <% if @director.errors.any? %>
+    <% @director.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
 <h1>
   Add a new director
 </h1>
@@ -11,7 +22,7 @@
       Dob
     </label>
 
-    <input type="text" id="dob" name="dob" class="form-control">
+    <input type="text" id="dob" name="dob" class="form-control" value="<%= @director.try(:dob) %>">
   </div>
 
   <!-- Label and input for name -->
@@ -20,7 +31,7 @@
       Name
     </label>
 
-    <input type="text" id="name" name="name" class="form-control">
+    <input type="text" id="name" name="name" class="form-control" value="<%= @director.try(:name) %>">
   </div>
 
   <!-- Label and input for bio -->
@@ -29,7 +40,7 @@
       Bio
     </label>
 
-    <textarea id="bio" name="bio" class="form-control" rows="3"></textarea>
+    <textarea id="bio" name="bio" class="form-control" rows="3"><%= @director.try(:bio) %></textarea>
   </div>
 
   <!-- Label and input for image_url -->

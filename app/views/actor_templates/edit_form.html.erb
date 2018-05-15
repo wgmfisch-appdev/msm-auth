@@ -1,3 +1,14 @@
+<!-- Validation failure messages -->
+<% if @actor.present? %>
+  <% if @actor.errors.any? %>
+    <% @actor.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
 <h1>
   Edit actor #<%= @actor.id %>
 </h1>

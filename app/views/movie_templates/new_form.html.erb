@@ -1,3 +1,14 @@
+<!-- Validation failure messages -->
+<% if @movie.present? %>
+  <% if @movie.errors.any? %>
+    <% @movie.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
 <h1>
   Add a new movie
 </h1>
@@ -11,7 +22,7 @@
       Title
     </label>
 
-    <input type="text" id="title" name="title" class="form-control">
+    <input type="text" id="title" name="title" class="form-control" value="<%= @movie.try(:title) %>">
   </div>
 
   <!-- Label and input for year -->
@@ -20,7 +31,7 @@
       Year
     </label>
 
-    <input type="text" id="year" name="year" class="form-control">
+    <input type="text" id="year" name="year" class="form-control" value="<%= @movie.try(:year) %>">
   </div>
 
   <!-- Label and input for duration -->
@@ -29,7 +40,7 @@
       Duration
     </label>
 
-    <input type="text" id="duration" name="duration" class="form-control">
+    <input type="text" id="duration" name="duration" class="form-control" value="<%= @movie.try(:duration) %>">
   </div>
 
   <!-- Label and input for description -->
@@ -38,7 +49,7 @@
       Description
     </label>
 
-    <textarea id="description" name="description" class="form-control" rows="3"></textarea>
+    <textarea id="description" name="description" class="form-control" rows="3">value="<%= @movie.try(:description) %>"</textarea>
   </div>
 
   <!-- Label and input for image_url -->
@@ -47,7 +58,7 @@
       Image url
     </label>
 
-    <input type="text" id="image_url" name="image_url" class="form-control">
+    <input type="text" id="image_url" name="image_url" class="form-control" value="<%= @movie.try(:image_url) %>">
   </div>
 
   <!-- Label and input for director_id -->
@@ -56,7 +67,7 @@
       Director
     </label>
 
-    <%= select_tag("director_id", options_from_collection_for_select(Director.all, :id, :name), :class => "form-control") %>
+    <%= select_tag("director_id", options_from_collection_for_select(Director.all, :id, :name, @movie.try(:director_id)), :class => "form-control") %>
     or <a href="/directors/new">add a new director</a> first
   </div>
 
