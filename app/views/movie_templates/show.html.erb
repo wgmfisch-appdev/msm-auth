@@ -51,6 +51,13 @@
     <%= @movie.director.name %>
   </dd>
 
+  <dt>
+    Number of characters
+  </dt>
+  <dd>
+    <%= @movie.characters.count %>
+  </dd>
+
 </dl>
 
 <a href="/delete_movie/<%= @movie.id %>" class="btn btn-danger">
