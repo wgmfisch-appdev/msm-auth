@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/firstdraft/console_ip_whitelist.git
-  revision: 567e5539f277ef2d494dcc779cf36bbb9d52188e
+  revision: 1af14f91522076488454c29d101aa8d544ce38f9
   specs:
     console_ip_whitelist (0.1.0)
       rails
@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: https://github.com/firstdraft/draft_log.git
-  revision: e37849266cfdf1e183268624b5deade705af7d7d
+  revision: daea8ecad43fde862432dd5edcf79d4c8b3f807d
   specs:
     draft_log (0.0.0)
       awesome_print
@@ -106,7 +106,7 @@ GEM
       activesupport (>= 3.0.0)
     arel (8.0.0)
     awesome_print (1.8.0)
-    bcrypt (3.1.11)
+    bcrypt (3.1.12)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
