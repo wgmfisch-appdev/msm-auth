@@ -15,7 +15,7 @@ README is just to supplement. **However**, a couple of notes about the video:
     ```
 
  - At around minute 54, we generate our first user account using the Devise gem.
-    - You do not need to do add the Devise gem to your Gemfile or install it, as I do in the video; your code already has it.
+    - You don't need to add the Devise gem to your Gemfile or install it, as I do in the video; your code already has it included and installed.
     - I used the `devise` generator. You should use the new `draft:devise` generator instead:
 
         ```
