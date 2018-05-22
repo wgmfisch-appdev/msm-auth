@@ -28,7 +28,7 @@ chdir APP_ROOT do
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:migrate'
-  system! 'bin/rails dev:prime:characters'
+  system! 'bin/rails dev:prime_characters'
 
   puts "\n== Installing diff2html-cli =="
   system! "npm install -g diff2html-cli"
