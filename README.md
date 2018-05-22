@@ -49,3 +49,39 @@ notice the links in the right side of the navbar.
 ## Devise Guide
 
 There's a Guide for [Authentication with Devise](https://guides.firstdraft.com/authentication-with-devise).
+
+## Tasks
+
+The main tasks are:
+
+ 1. Add the users table using Devise.
+
+    ```
+    rails generate draft:devise user first_name:string last_name:string
+    ```
+
+ 1. Add a join model to connect users and movies; we're calling it "bookmarks":
+
+    ```
+    rails generate draft:resource bookmark user_id:integer movie_id:integer
+    ```
+
+ 1. Add sign up/in/out and edit profile links to the navbar.
+ 1. Add `before_action :authenticate_user!` to the `ApplicationController` to require a signed in user at all times.
+
+### New bookmark form
+
+ 1. In the new bookmark form, pre-populate the input for `user_id` with the ID number of the currently signed in user.
+ 1. Then, hide the input.
+
+### Bookmarks index page
+
+ 1. Display movie titles rather than ID numbers.
+ 1. Make the titles into links that lead to the show page of each movie.
+ 1. Restrict the list of bookmarks to only the ones that belong to the currently signed in user.
+
+### Movie show page
+
+ 1. Add a way to bookmark the movie directly from this page.
+
+## Again, here is [our target](https://msm-auth.herokuapp.com/).
