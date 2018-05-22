@@ -8,7 +8,7 @@ README is just to supplement. **However**, a couple of notes about the video:
  - The first ~22 minutes of this video is a review of associations.
  - The rest of it is a walkthrough of MSM Auth.
  - The video is using an older version of the `starter_generators` gem, so the styling of the Golden 7 code will look a little different than yours (Bootstrap 4 rather than 3).
- - At around minute 30, I used the `starter:resource` generator. You should use the `draft:resource` generator instead:
+ - At around minute 30, I used the old `starter:resource` generator. You should use the new and improved `draft:resource` generator instead:
 
     ```
     rails generate draft:resource bookmark movie_id:integer user_id:integer
@@ -16,7 +16,7 @@ README is just to supplement. **However**, a couple of notes about the video:
 
  - At around minute 54, we generate our first user account using the Devise gem.
     - You do not need to do add the Devise gem to your Gemfile or install it, as I do in the video; your code already has it.
-    - I used the `devise` generator. You should use the `draft:devise` generator instead:
+    - I used the `devise` generator. You should use the new `draft:devise` generator instead:
 
         ```
         rails generate draft:devise user first_name:string last_name:string
