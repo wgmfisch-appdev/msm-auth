@@ -62,7 +62,6 @@ end
 group :development do
   gem "annotate"
   gem "awesome_print"
-  gem "better_errors"
   gem "binding_of_caller"
   gem "dev_toolbar", github: "firstdraft/dev_toolbar"
   gem "draft_generators", github: "firstdraft/draft_generators"

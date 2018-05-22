@@ -14,10 +14,10 @@
 class Actor < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: {
-      scope: :dob,
-      message: "should be unique with respect to date of birth"
+    scope: :dob,
+    message: "should be unique with respect to date of birth"
   }
-
+  
   has_many :characters
   has_many :movies, through: :characters
 end
