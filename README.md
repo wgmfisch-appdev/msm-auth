@@ -54,6 +54,8 @@ There's a Guide for [Authentication with Devise](https://guides.firstdraft.com/a
 
 The main tasks are:
 
+### Setup
+
  1. Add the users table using Devise.
 
     ```
