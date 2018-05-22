@@ -68,8 +68,11 @@ The main tasks are:
     rails generate draft:resource bookmark user_id:integer movie_id:integer
     ```
 
- 1. Add sign up/in/out and edit profile links to the navbar.
- 1. Add `before_action :authenticate_user!` to the `ApplicationController` to require a signed in user at all times.
+### Navbar
+
+ 1. Add sign out and edit profile links for when there is a signed in user.
+ 1. Add sign up and sign in links for when there isn't a signed in user.
+ 1. Add a link to `/bookmarks` that says "My Bookmarks".
 
 ### New bookmark form
 
