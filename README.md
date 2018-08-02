@@ -21,6 +21,8 @@ README is just to supplement. **However**, a couple of notes about the video:
         ```
         rails generate draft:devise user first_name:string last_name:string
         ```
+    - You may need to restart your Rails server for it to take hold.
+ - To populate directors, movies, actors, and characters, use `rails dev:prime_characters`.
 
 ## Objective
 
