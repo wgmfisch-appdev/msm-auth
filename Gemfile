@@ -56,7 +56,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem "dotenv-rails"
   gem "grade_runner", github: "firstdraft/grade_runner"
-  gem "pry-rails"
+  gem "pry-rails", github: "r-obert/pry-rails", branch: "v0.12-prompt_support"
   gem "web_git", github: "firstdraft/web_git"
 end
 
